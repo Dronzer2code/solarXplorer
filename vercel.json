@@ -1,10 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/runtime-auth0.js": {
-      "runtime": "@vercel/node@3.0.0"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",

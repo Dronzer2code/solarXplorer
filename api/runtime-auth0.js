@@ -1,5 +1,5 @@
 // Vercel serverless function for Auth0 token exchange
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -70,4 +70,4 @@ export default async function handler(req, res) {
   } else {
     res.status(405).json({ error: 'Method not allowed' });
   }
-}
+};
