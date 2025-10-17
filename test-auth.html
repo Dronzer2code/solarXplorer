@@ -61,35 +61,14 @@
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     
     <script>
-        // Test Auth0 configuration - Load from secure API
-        async function initTestAuth() {
-            try {
-                // Fetch configuration from server
-                const configResponse = await fetch('/api/auth-config');
-                if (!configResponse.ok) {
-                    throw new Error('Failed to load Auth0 configuration');
-                }
-                
-                const config = await configResponse.json();
-                document.getElementById('debug-info').innerHTML = "✅ Auth0 config loaded from server";
-                
-                // Create Auth0 client with server configuration
-                const auth0Client = await auth0.createAuth0Client({
-                    domain: config.domain,
-                    clientId: config.clientId,
-                    authorizationParams: {
-                        redirect_uri: window.location.origin + "/test-auth.html"
-                    }
-                });
-                
-                return auth0Client;
-            } catch (error) {
-                document.getElementById('debug-info').innerHTML = "❌ Failed to load Auth0 config: " + error.message;
-                throw error;
+        // Test Auth0 configuration
+        auth0.createAuth0Client({
+            domain: "dev-j244xylfomnfbzn8.us.auth0.com",
+            clientId: "5VZQZVh4RCyJBqZmrzDAFT12YHjXIvUy",
+            authorizationParams: {
+                redirect_uri: window.location.origin + "/test-auth.html"
             }
-        }
-        
-        initTestAuth().then(async (auth0Client) => {
+        }).then(async (auth0Client) => {
             console.log("✅ Auth0 client initialized");
             document.getElementById('debug-info').innerHTML = "✅ Auth0 SDK loaded successfully";
             
