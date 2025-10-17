@@ -4,9 +4,35 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.mp4",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.webm",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/(.*\\.(css|js|html|mp4|webm|png|jpg|jpeg|gif|ico|svg))",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
     {
       "src": "/api/(.*)",
       "dest": "/server.js"
