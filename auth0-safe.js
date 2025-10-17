@@ -22,16 +22,11 @@ async function loadAuth0Config() {
     return auth0Config;
   } catch (error) {
     console.error('❌ Failed to load Auth0 config from server:', error);
-    console.log('🔄 Using fallback configuration...');
     
-    // Fallback configuration for development
-    auth0Config = {
-      domain: 'dev-j244xylfomnfbzn8.us.auth0.com',
-      clientId: 'NxbhETO5YcloNEZUyx5GUCpK0zfOZnnD',
-      redirectUri: window.location.origin + '/callback'
-    };
+    // No fallback - authentication requires proper environment configuration
+    throw new Error('Auth0 configuration could not be loaded. Please check server configuration.');
     
-    return auth0Config;
+    return null;
   }
 }
 

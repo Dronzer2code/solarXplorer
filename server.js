@@ -2,6 +2,11 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+// Load environment variables (development only)
+if (process.env.NODE_ENV !== 'production') {
+  require('./env-loader');
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -46,9 +51,17 @@ app.get('/test-auth', (req, res) => {
 
 // API endpoint to serve Auth0 configuration
 app.get('/api/auth-config', (req, res) => {
+  // Ensure environment variables are set
+  if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_CLIENT_ID) {
+    return res.status(500).json({
+      error: 'Auth0 configuration not found',
+      message: 'Please set AUTH0_DOMAIN and AUTH0_CLIENT_ID environment variables'
+    });
+  }
+
   res.json({
-    domain: process.env.AUTH0_DOMAIN || 'dev-j244xylfomnfbzn8.us.auth0.com',
-    clientId: process.env.AUTH0_CLIENT_ID || 'NxbhETO5YcloNEZUyx5GUCpK0zfOZnnD',
+    domain: process.env.AUTH0_DOMAIN,
+    clientId: process.env.AUTH0_CLIENT_ID,
     redirectUri: req.protocol + '://' + req.get('host') + '/callback'
   });
 });
