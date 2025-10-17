@@ -193,9 +193,9 @@ async function handleMainCTA() {
       const isAuthenticated = await window.auth0Client.isAuthenticated();
       
       if (isAuthenticated) {
-        // User is logged in - redirect to Vercel page
-        console.log("🚀 Redirecting authenticated user to Solar System");
-        window.open("https://3d-solar-system-three-js.vercel.app/", "_blank");
+  // User is logged in - redirect to Vercel page
+  console.log("🚀 Redirecting authenticated user to Solar System");
+  window.location.assign("https://3d-solar-system-three-js.vercel.app/");
       } else {
         // User is not logged in - trigger login
         console.log("🔑 Redirecting to login for authentication");
@@ -207,13 +207,13 @@ async function handleMainCTA() {
       }
     } else {
       // Auth0 not initialized yet - fallback to direct link
-      console.log("⚠️ Auth0 not ready, opening direct link");
-      window.open("https://3d-solar-system-three-js.vercel.app/", "_blank");
+  console.log("⚠️ Auth0 not ready, opening direct link");
+  window.location.assign("https://3d-solar-system-three-js.vercel.app/");
     }
   } catch (error) {
-    console.error("❌ CTA handler error:", error);
-    // Fallback to direct link on error
-    window.open("https://3d-solar-system-three-js.vercel.app/", "_blank");
+  console.error("❌ CTA handler error:", error);
+  // Fallback to direct link on error
+  window.location.assign("https://3d-solar-system-three-js.vercel.app/");
   }
 }
 
