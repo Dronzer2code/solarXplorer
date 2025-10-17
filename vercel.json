@@ -1,9 +1,16 @@
 {
   "version": 2,
-  "public": true,
-  "framework": null,
-  "trailingSlash": false,
-  "cleanUrls": true,
+  "functions": {
+    "api/runtime-auth0.js": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -19,36 +26,6 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=31536000; includeSubDomains"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|webp|svg|webm|mp4))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
