@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth0 Test - Astral Abyss</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            text-align: center;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .user-info {
+            margin: 20px 0;
+            padding: 20px;
+            background: #222;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🚀 Auth0 Integration Test</h1>
+        <p>Test your Auth0 configuration before implementing in the main site.</p>
+        
+        <div id="auth-status">Checking authentication status...</div>
+        
+        <div id="auth-buttons">
+            <button id="login-test-btn">Login</button>
+            <button id="logout-test-btn" style="display: none;">Logout</button>
+        </div>
+        
+        <div id="user-info-test" style="display: none;" class="user-info">
+            <!-- User info will appear here -->
+        </div>
+        
+        <div id="debug-info" style="margin-top: 20px; font-size: 12px; color: #888;">
+            <!-- Debug information -->
+        </div>
+    </div>
+
+    <!-- Auth0 SDK -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    
+    <script>
+        // Test Auth0 configuration
+        auth0.createAuth0Client({
+            domain: "dev-j244xylfomnfbzn8.us.auth0.com",
+            clientId: "5VZQZVh4RCyJBqZmrzDAFT12YHjXIvUy",
+            authorizationParams: {
+                redirect_uri: window.location.origin + "/test-auth.html"
+            }
+        }).then(async (auth0Client) => {
+            console.log("✅ Auth0 client initialized");
+            document.getElementById('debug-info').innerHTML = "✅ Auth0 SDK loaded successfully";
+            
+            // Handle redirect callback
+            if (location.search.includes("state=") && 
+                (location.search.includes("code=") || location.search.includes("error="))) {
+                try {
+                    await auth0Client.handleRedirectCallback();
+                    window.history.replaceState({}, document.title, "/test-auth.html");
+                    console.log("✅ Callback handled");
+                } catch (error) {
+                    console.error("❌ Callback error:", error);
+                }
+            }
+            
+            // Update UI
+            async function updateUI() {
+                const isAuthenticated = await auth0Client.isAuthenticated();
+                const user = await auth0Client.getUser();
+                
+                const statusEl = document.getElementById('auth-status');
+                const loginBtn = document.getElementById('login-test-btn');
+                const logoutBtn = document.getElementById('logout-test-btn');
+                const userInfoEl = document.getElementById('user-info-test');
+                
+                if (isAuthenticated && user) {
+                    statusEl.textContent = "✅ Authenticated";
+                    loginBtn.style.display = "none";
+                    logoutBtn.style.display = "inline-block";
+                    userInfoEl.style.display = "block";
+                    userInfoEl.innerHTML = `
+                        <h3>Welcome, ${user.name}!</h3>
+                        <p>Email: ${user.email}</p>
+                        <img src="${user.picture}" alt="Profile" style="width: 60px; border-radius: 50%;">
+                    `;
+                } else {
+                    statusEl.textContent = "🔒 Not authenticated";
+                    loginBtn.style.display = "inline-block";
+                    logoutBtn.style.display = "none";
+                    userInfoEl.style.display = "none";
+                }
+            }
+            
+            // Event listeners
+            document.getElementById('login-test-btn').addEventListener('click', () => {
+                auth0Client.loginWithRedirect();
+            });
+            
+            document.getElementById('logout-test-btn').addEventListener('click', () => {
+                auth0Client.logout({
+                    logoutParams: {
+                        returnTo: window.location.origin + "/test-auth.html"
+                    }
+                });
+            });
+            
+            // Initial UI update
+            await updateUI();
+            
+        }).catch(error => {
+            console.error("❌ Auth0 initialization failed:", error);
+            document.getElementById('debug-info').innerHTML = "❌ Auth0 failed to load: " + error.message;
+        });
+    </script>
+</body>
+</html>
