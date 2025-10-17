@@ -44,6 +44,15 @@ app.get('/test-auth', (req, res) => {
   res.sendFile(path.join(__dirname, 'test-auth.html'));
 });
 
+// API endpoint to serve Auth0 configuration
+app.get('/api/auth-config', (req, res) => {
+  res.json({
+    domain: process.env.AUTH0_DOMAIN || 'dev-j244xylfomnfbzn8.us.auth0.com',
+    clientId: process.env.AUTH0_CLIENT_ID || 'NxbhETO5YcloNEZUyx5GUCpK0zfOZnnD',
+    redirectUri: req.protocol + '://' + req.get('host') + '/callback'
+  });
+});
+
 // Export the Express API for Vercel
 module.exports = app;
 
