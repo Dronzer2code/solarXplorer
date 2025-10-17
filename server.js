@@ -4,8 +4,14 @@ const cors = require('cors');
 
 // Load environment variables (development only)
 if (process.env.NODE_ENV !== 'production') {
-  require('./env-loader');
+  require('dotenv').config();
 }
+
+// Debug environment variables
+console.log('🔧 Environment Check:');
+console.log('📍 AUTH0_DOMAIN:', process.env.AUTH0_DOMAIN ? 'Set ✅' : 'Missing ❌');
+console.log('📍 AUTH0_CLIENT_ID:', process.env.AUTH0_CLIENT_ID ? 'Set ✅' : 'Missing ❌');
+console.log('📍 NODE_ENV:', process.env.NODE_ENV || 'development');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -51,19 +57,40 @@ app.get('/test-auth', (req, res) => {
 
 // API endpoint to serve Auth0 configuration
 app.get('/api/auth-config', (req, res) => {
+  const domain = process.env.AUTH0_DOMAIN;
+  const clientId = process.env.AUTH0_CLIENT_ID;
+  
+  console.log('🔧 Auth config requested');
+  console.log('📍 Domain:', domain ? 'Set ✅' : 'Missing ❌');
+  console.log('📍 ClientId:', clientId ? 'Set ✅' : 'Missing ❌');
+  console.log('📍 Host:', req.get('host'));
+  
   // Ensure environment variables are set
-  if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_CLIENT_ID) {
+  if (!domain || !clientId) {
+    console.error('❌ Missing Auth0 configuration');
     return res.status(500).json({
       error: 'Auth0 configuration not found',
-      message: 'Please set AUTH0_DOMAIN and AUTH0_CLIENT_ID environment variables'
+      message: 'Please set AUTH0_DOMAIN and AUTH0_CLIENT_ID environment variables',
+      details: {
+        domain: !domain ? 'AUTH0_DOMAIN not set' : 'OK',
+        clientId: !clientId ? 'AUTH0_CLIENT_ID not set' : 'OK'
+      }
     });
   }
 
-  res.json({
-    domain: process.env.AUTH0_DOMAIN,
-    clientId: process.env.AUTH0_CLIENT_ID,
-    redirectUri: req.protocol + '://' + req.get('host') + '/callback'
+  const config = {
+    domain: domain,
+    clientId: clientId,
+    redirectUri: `${req.protocol}://${req.get('host')}/callback`
+  };
+  
+  console.log('✅ Sending Auth0 config:', {
+    domain: config.domain,
+    clientId: config.clientId.substring(0, 8) + '...',
+    redirectUri: config.redirectUri
   });
+
+  res.json(config);
 });
 
 // Export the Express API for Vercel
