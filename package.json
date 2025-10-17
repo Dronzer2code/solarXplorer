@@ -1,23 +1,18 @@
 {
-  "name": "astral_3d",
+  "name": "astral-3d",
   "version": "1.0.0",
   "description": "3D Solar System - Astral Abyss Landing Page",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
-    "build": "echo 'Static build complete'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'Static site ready for deployment'",
+    "start": "echo 'Static site deployed'",
+    "dev": "python -m http.server 3000 || npx serve .",
+    "test": "echo \"No tests specified\""
   },
-  "keywords": ["space", "solar-system", "3d", "astronomy", "auth0"],
+  "keywords": ["space", "solar-system", "3d", "astronomy", "auth0", "vercel"],
   "author": "Subarna(Dronzer2code), SOUMYA(SoumyaEXE)",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
-  },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "type": "module"
 }
