@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "build": "echo 'Static build complete'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["space", "solar-system", "3d", "astronomy", "auth0"],
@@ -14,5 +15,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

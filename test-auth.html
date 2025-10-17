@@ -67,7 +67,9 @@
             clientId: "5VZQZVh4RCyJBqZmrzDAFT12YHjXIvUy",
             authorizationParams: {
                 redirect_uri: window.location.origin + "/test-auth.html"
-            }
+            },
+            cacheLocation: 'localstorage',
+            useRefreshTokens: true
         }).then(async (auth0Client) => {
             console.log("✅ Auth0 client initialized");
             document.getElementById('debug-info').innerHTML = "✅ Auth0 SDK loaded successfully";

@@ -1,13 +1,10 @@
 // Auth0 Configuration and Authentication Logic
-auth0.createAuth0Client({
-  domain: "dev-j244xylfomnfbzn8.us.auth0.com",
-  clientId: "5VZQZVh4RCyJBqZmrzDAFT12YHjXIvUy",
-  authorizationParams: {
-    redirect_uri: window.location.origin + window.location.pathname
-  }
-}).then(async (auth0Client) => {
-  console.log("🚀 Auth0 client initialized successfully");
-  console.log("📍 Redirect URI:", window.location.origin + window.location.pathname);
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Initialize Auth0 using our manager
+    const auth0Client = await authManager.initialize();
+    console.log("🚀 Auth0 client initialized successfully");
+    console.log("📍 Redirect URI:", authManager.redirectUri);
 
   // Handle authentication state on page load
   if (location.search.includes("state=") && 
@@ -184,8 +181,9 @@ auth0.createAuth0Client({
   window.updateAuthUI = updateAuthUI;
   window.updateCTAButtons = updateCTAButtons;
 
-}).catch(error => {
-  console.error("❌ Failed to initialize Auth0:", error);
+  } catch (error) {
+    console.error("❌ Failed to initialize Auth0:", error);
+  }
 });
 
 // Global function to handle main CTA button clicks
