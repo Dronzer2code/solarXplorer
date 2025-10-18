@@ -14,7 +14,6 @@ body {
     color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden; /* Prevent horizontal scroll */
-    padding-top: 80px; /* Account for fixed navigation */
 }
 
 /* --- Authentication Navigation --- */
@@ -28,6 +27,18 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     padding: 0.5rem 0;
+}
+
+.auth-nav::after {
+    /* Extend the translucent nav backdrop to cover the gap below the bar */
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    pointer-events: none;
 }
 
 .nav-container {
@@ -490,6 +501,7 @@ p {
     padding: 2rem;
     text-align: center;
     position: relative;
+    scroll-margin-top: 100px; /* Prevent sections from hiding under fixed nav */
 }
 
 .content-wrapper {
