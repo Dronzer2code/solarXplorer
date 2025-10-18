@@ -662,85 +662,200 @@ p {
     50% { transform: translateY(10px); }
 }
 
-
-/* --- Features Section --- */
-/* --- Large Drawer Info Panel --- */
-.info-drawer {
-    max-width: 900px;
-    margin: 3rem auto 0 auto;
-    background: rgba(30, 30, 40, 0.45);
-    border-radius: 24px 24px 0 0;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.25);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255,255,255,0.10);
-    color: #e0e0e0;
+/* --- Mission Briefing Section --- */
+.briefing-section {
+    padding: 6rem 2rem;
     position: relative;
-    z-index: 10;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    max-height: 80px;
+    z-index: 5;
 }
-.info-drawer.open {
-    max-height: 600px;
-    transition: max-height 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+.briefing-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255, 204, 0, 0.08), transparent 55%),
+                linear-gradient(180deg, rgba(10, 20, 40, 0.6), rgba(0, 0, 0, 0.8));
+    z-index: -1;
+    opacity: 0.85;
 }
-.drawer-handle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 1.2rem 0;
-    background: rgba(135,206,250,0.08);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    user-select: none;
+
+.briefing-header {
+    text-align: left;
+    max-width: 720px;
 }
-.drawer-arrow {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: #87ceeb;
-    transition: transform 0.3s;
+
+.briefing-header .section-title {
+    margin-bottom: 0.75rem;
 }
-.info-drawer.open .drawer-arrow {
-    transform: rotate(180deg);
-}
-.drawer-title {
-    color: #ffcc00;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-}
-.drawer-content {
-    padding: 2rem 2.5rem 2rem 2.5rem;
-    font-size: 1.15rem;
-    opacity: 1;
-    transition: opacity 0.4s;
-}
-.info-drawer:not(.open) .drawer-content {
-    opacity: 0;
-    pointer-events: none;
-}
-.drawer-content ul {
-    list-style: none;
-    padding: 0;
+
+.briefing-header .section-subtitle {
     margin: 0;
-}
-.drawer-content li {
+    color: rgba(224, 224, 224, 0.82);
     font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-    padding-left: 0.5rem;
-    border-left: 3px solid #87ceeb;
-    background: linear-gradient(90deg, rgba(135,206,250,0.08), transparent);
-    border-radius: 4px;
-    color: #e0e0e0;
-    box-shadow: 0 2px 8px rgba(135,206,250,0.04);
 }
-.drawer-content li strong {
-    color: #ff9900;
-    font-weight: 500;
+
+.briefing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.briefing-card {
+    background: rgba(12, 18, 35, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.briefing-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.12), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.briefing-card:hover::after {
+    opacity: 1;
+}
+
+.briefing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(255, 204, 0, 0.18);
+}
+
+.briefing-card-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+.briefing-card-header h3 {
+    font-size: 1.6rem;
+    margin-top: 0.75rem;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+.badge-primary {
+    background: rgba(0, 153, 255, 0.18);
+    border: 1px solid rgba(0, 153, 255, 0.45);
+    color: #57b5ff;
+}
+
+.badge-accent {
+    background: rgba(255, 165, 0, 0.18);
+    border: 1px solid rgba(255, 165, 0, 0.45);
+    color: #ffcc66;
+}
+
+.badge-neutral {
+    background: rgba(120, 120, 160, 0.18);
+    border: 1px solid rgba(160, 160, 200, 0.45);
+    color: #d0d0ff;
+}
+
+.badge-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.briefing-card p {
+    color: rgba(224, 224, 224, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.briefing-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.briefing-list li {
+    padding-left: 1.4rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: rgba(224, 224, 224, 0.75);
+}
+
+.briefing-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffaa00, #ffdd55);
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+.briefing-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(224, 224, 224, 0.8);
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.meta-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.meta-value {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffdf7f;
+}
+
+@media (max-width: 768px) {
+    .briefing-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .briefing-card {
+        padding: 1.75rem;
+    }
+
+    .briefing-card-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .briefing-grid {
+        gap: 1.5rem;
+    }
 }
 
 /* --- Colourless Blur for Section 2 --- */
