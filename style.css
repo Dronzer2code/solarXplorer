@@ -16,6 +16,34 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+:root {
+    /* NASA Official Colors */
+    --nasa-blue: #0b3d91;
+    --nasa-red: #fc3d21;
+    --nasa-white: #ffffff;
+    --nasa-gray: #e5e5e5;
+    --nasa-dark-gray: #5a6670;
+    --nasa-black: #000000;
+
+    /* Space Themed Colors */
+    --deep-space: #000814;
+    --cosmic-blue: #001d3d;
+    --star-gold: #ffd60a;
+    --nebula-purple: #7209b7;
+    --comet-blue: #4cc9f0;
+    --asteroid-orange: #f77f00;
+    --planet-green: #2a9d8f;
+    --ring-saturn: #e9c46a;
+
+    /* UI Colors */
+    --panel-bg: rgba(11, 61, 145, 0.85);
+    --panel-border: rgba(255, 214, 10, 0.3);
+    --button-primary: linear-gradient(135deg, var(--nasa-blue), var(--cosmic-blue));
+    --button-secondary: linear-gradient(135deg, var(--nasa-dark-gray), #404040);
+    --button-active: linear-gradient(135deg, var(--nasa-red), #d32f2f);
+    --button-hover: linear-gradient(135deg, var(--nasa-blue), #0a2a66);
+}
+
 /* --- Authentication Navigation --- */
 .auth-nav {
     position: fixed;
@@ -667,58 +695,82 @@ p {
     padding: 6rem 2rem;
     position: relative;
     z-index: 5;
+    background: transparent;
+    isolation: isolate; /* Keep overlay blur behind content */
 }
 
 .briefing-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top, rgba(255, 204, 0, 0.08), transparent 55%),
-                linear-gradient(180deg, rgba(10, 20, 40, 0.6), rgba(0, 0, 0, 0.8));
-    z-index: -1;
-    opacity: 0.85;
+    background: rgba(0, 13, 32, 0.35);
+    z-index: 0;
+    opacity: 1;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 }
 
 .briefing-header {
-    text-align: left;
+    text-align: center;
     max-width: 720px;
+    margin: 0 auto;
+}
+
+.briefing-section .content-wrapper {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .briefing-header .section-title {
     margin-bottom: 0.75rem;
+    color: var(--nasa-white);
+    text-shadow: 0 0 14px rgba(76, 201, 240, 0.4);
 }
 
 .briefing-header .section-subtitle {
     margin: 0;
     color: rgba(224, 224, 224, 0.82);
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .briefing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.75rem;
     margin-top: 3rem;
 }
 
 .briefing-card {
-    background: rgba(12, 18, 35, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 22, 43, 0.55);
+    border: 1px solid rgba(255, 214, 10, 0.18);
     border-radius: 18px;
     padding: 2rem;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 18px 36px rgba(0, 8, 20, 0.4);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 315px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
 }
 
 .briefing-card::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255, 204, 0, 0.12), transparent 45%);
+    background: rgba(76, 201, 240, 0.08);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -729,7 +781,7 @@ p {
 
 .briefing-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 25px 60px rgba(255, 204, 0, 0.18);
+    box-shadow: 0 24px 50px rgba(0, 13, 32, 0.35);
 }
 
 .briefing-card-header {
@@ -742,7 +794,10 @@ p {
     font-size: 1.6rem;
     margin-top: 0.75rem;
     color: #ffffff;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .status-badge {
@@ -756,32 +811,32 @@ p {
 }
 
 .badge-primary {
-    background: rgba(0, 153, 255, 0.18);
-    border: 1px solid rgba(0, 153, 255, 0.45);
-    color: #57b5ff;
+    background: rgba(76, 201, 240, 0.16);
+    border: 1px solid rgba(76, 201, 240, 0.4);
+    color: rgba(76, 201, 240, 0.95);
 }
 
 .badge-accent {
-    background: rgba(255, 165, 0, 0.18);
-    border: 1px solid rgba(255, 165, 0, 0.45);
-    color: #ffcc66;
+    background: rgba(247, 127, 0, 0.16);
+    border: 1px solid rgba(247, 127, 0, 0.38);
+    color: rgba(247, 127, 0, 0.92);
 }
 
 .badge-neutral {
-    background: rgba(120, 120, 160, 0.18);
-    border: 1px solid rgba(160, 160, 200, 0.45);
-    color: #d0d0ff;
+    background: rgba(90, 102, 112, 0.18);
+    border: 1px solid rgba(90, 102, 112, 0.4);
+    color: rgba(229, 229, 229, 0.85);
 }
 
 .badge-outline {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 214, 10, 0.4);
+    color: rgba(255, 214, 10, 0.9);
 }
 
 .briefing-card p {
-    color: rgba(224, 224, 224, 0.85);
-    margin-bottom: 1.5rem;
+    color: rgba(229, 229, 229, 0.92);
+    margin-bottom: 0;
 }
 
 .briefing-list {
@@ -809,8 +864,8 @@ p {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffaa00, #ffdd55);
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+    background: linear-gradient(135deg, var(--star-gold), var(--ring-saturn));
+    box-shadow: 0 0 8px rgba(255, 214, 10, 0.6);
 }
 
 .briefing-meta {
@@ -819,11 +874,11 @@ p {
     align-items: center;
     padding: 0.85rem 1rem;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(224, 224, 224, 0.8);
+    background: rgba(11, 61, 145, 0.35);
+    border: 1px solid rgba(255, 214, 10, 0.25);
+    color: rgba(229, 229, 229, 0.85);
     font-size: 0.9rem;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     position: relative;
     z-index: 1;
 }
@@ -832,12 +887,12 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .meta-value {
     font-family: 'Orbitron', sans-serif;
-    color: #ffdf7f;
+    color: var(--star-gold);
 }
 
 @media (max-width: 768px) {
@@ -847,6 +902,7 @@ p {
 
     .briefing-card {
         padding: 1.75rem;
+        flex: 1 1 270px;
     }
 
     .briefing-card-header h3 {
@@ -855,6 +911,17 @@ p {
 
     .briefing-grid {
         gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .briefing-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .briefing-card {
+        flex: 1 1 315px;
     }
 }
 
@@ -985,15 +1052,15 @@ p {
 }
 
 .feature-item {
-    background: linear-gradient(145deg, rgba(15, 15, 30, 0.8), rgba(25, 25, 45, 0.6));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 22, 43, 0.55);
+    border: 1px solid rgba(255, 214, 10, 0.18);
     padding: 2.5rem;
     border-radius: 16px;
     backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 36px rgba(0, 13, 32, 0.35);
 }
 
 .feature-item::before {
@@ -1015,15 +1082,15 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(145deg, rgba(255, 153, 0, 0.02), rgba(255, 248, 220, 0.02));
+    background: rgba(76, 201, 240, 0.08);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .feature-item:hover {
     transform: translateY(-12px);
-    border-color: rgba(255, 153, 0, 0.3);
-    box-shadow: 0 20px 60px rgba(255, 153, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 214, 10, 0.35);
+    box-shadow: 0 20px 60px rgba(0, 13, 32, 0.45), 0 8px 32px rgba(0, 13, 32, 0.35);
 }
 
 .feature-item:hover::before,
@@ -1105,10 +1172,20 @@ p {
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 1rem;
-    font-size: 0.8rem;
-    color: #666;
-    background-color: #000;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    color: rgba(229, 229, 229, 0.8);
+    background: rgba(8, 22, 43, 0.6);
+    border-top: 1px solid rgba(255, 214, 10, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    letter-spacing: 0.5px;
+}
+
+.footer-heart {
+    display: inline-block;
+    margin: 0 0.35rem;
+    font-size: 1rem;
 }
 
 /* --- User Dashboard Styles --- */
