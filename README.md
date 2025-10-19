@@ -7,6 +7,15 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2000&pause=400&color=00FF9C&center=true&vCenter=true&width=1000&height=100&lines=%3E_%2B+BOOTING+SOLARXPLORER...;%3E_%2B+TEAM+METAVISION+ONLINE;%3E_%2B+LIVE+3D+SOLAR+SYSTEM+%7C+THREE.JS;%3E_%2B+COPILOT+ENGAGED+FOR+OPTIMIZATION;%3E_%2B+AUTH0+%2F+GEMINI+%2F+SNOWFLAKE+LINKED;%3E_%2B+EDUCATION+MODE%3A+SPACE+CLASSROOM" alt="SolarXplorer Typing Animation" />
 </div>
 
+<div align="center">
+  
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_SolarXplorer-FF0000?style=for-the-badge)](https://solarXplorer.vercel.app)
+[![Made with Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![Powered by Auth0](https://img.shields.io/badge/Auth0-EB5424?style=for-the-badge&logo=auth0&logoColor=white)](https://auth0.com/)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/features/copilot)
+
+</div>
+
 <br>
 
 ```text
