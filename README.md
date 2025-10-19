@@ -38,7 +38,7 @@
 
 **Team MetaVision** set out to build a browser-native 3D solar system with Three.js. We began as two dreamers staring at a blank constellation of ideas and evolved into a four-person crew launching a production-ready cosmic playground. This document traces that journey and captures how partner tools, open-source collaboration, and GitHub Copilot helped us achieve our mission.
 
-### Mission Snapshot
+## 🎯 Mission Snapshot
 
 | Scope | Details |
 | --- | --- |
@@ -48,7 +48,7 @@
 | Status | Public launch prototype complete; continuous content and performance tuning |
 
 ---
-### Our Story • From Vision to Execution
+## 👀 Our Story • From Vision to Execution
 
 Our journey began with a simple yet ambitious goal: build a 3D solar system in Three.js that runs seamlessly in any browser. The founding duo of Team MetaVision spent countless late nights sketching orbital mechanics, fine-tuning shaders, and dreaming of an experience that would feel cinematic on any device. As our vision expanded, so did our crew—four passionate teammates united by curiosity, caffeine, and an unwavering desire to prove that high-end 3D experiences belong on the open web.
 
@@ -72,7 +72,7 @@ The breakthrough came during our participation in MLH Open Source Week and Hackt
 
 Today, **SolarXplorer** invites anyone to embark on an optimized, immersive journey through our solar system—featuring fluid graphics, scientifically accurate planetary motion, and ambient interstellar soundscapes. More than just code, it’s the story of how teamwork, open source learning, and modern developer tools transformed ambition into reality.
 
-### Partner Integration
+## 🤝 Partner Integration
 
 We integrated powerful tools from the MLH ecosystem to elevate the experience:
 
@@ -117,7 +117,7 @@ We integrated powerful tools from the MLH ecosystem to elevate the experience:
 
 ---
 
-### ✨ Feature Highlights
+## ✨ Feature Highlights
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
@@ -133,11 +133,11 @@ We integrated powerful tools from the MLH ecosystem to elevate the experience:
 - **Immersive Audio-Visual Design** — Progressive lighting and sound cues that enhance the cosmic sense of scale
 - **Interactive Learning Pathways** — Educational journeys that make space science and planetary mythology tangible and engaging
 
-### 🎓 Educational Mission
+## 🎓 Educational Mission
 
 **SolarXplorer** is built as an educational constellation as much as an entertainment showcase. Every orbit, tooltip, and AI-guided prompt is crafted to help explorers learn about the physics of our solar system, the myths that shaped planetary names, and the frontier missions pushing humanity deeper into space. From classroom demonstrations to self-guided stargazing sessions, the experience sparks curiosity that extends far beyond the digital realm.
 
-### 🌟 Constellation Moments (Hover-Worthy Highlights)
+## 🌟 Constellation Moments (Hover-Worthy Highlights)
 
 
 <div align="center">
@@ -169,7 +169,7 @@ flowchart LR
     CI-->Vercel
 ```
 
-### Launch Timeline
+## ⏳ Launch Timeline
 
 ```mermaid
 timeline
@@ -191,7 +191,7 @@ timeline
 
 ---
 
-### Mission Walkthrough
+## 🛣️ Mission Walkthrough
 
 1. **Authenticate** — Sign in through Auth0 to sync mission progress and achievements.
 2. **Launch** — Enter the Three.js solar system with an optimized loading sequence and easing transitions.
@@ -201,7 +201,7 @@ timeline
 
 ---
 
-### 👥 Team MetaVision
+## 👥 Team MetaVision
 
 | Crew Member | Role | Superpower |
 | --- | --- | --- |
@@ -214,7 +214,7 @@ Together, we bridge the realms of art, engineering, and storytelling. During int
 
 ---
 
-### 💡 Lessons from the Cosmos
+## 💡 Lessons from the Cosmos
 
 - **Optimization is empathy** — If our galaxy can't render smoothly on everyday laptops, we've failed our users
 - **Open source fuels innovation** — Community collaboration revealed optimization patterns we never would have discovered in isolation  
@@ -223,7 +223,7 @@ Together, we bridge the realms of art, engineering, and storytelling. During int
 
 ---
 
-### 🚀 What's Next
+## 🚀 What's Next
 
 - **Enhanced AI Learning** — Expand Gemini's knowledge base with advanced planetary stories and comprehensive STEM curricula
 - **Collaborative Exploration** — Develop multiplayer tour capabilities for classroom integration and community events  
