@@ -17,46 +17,48 @@ Team MetaVision set out to build a browser-native 3D solar system with Three.js.
 | Status | Public launch prototype complete; continuous content and performance tuning |
 
 ---
-### Chapter 1 · Searching the Stars
+### Our Story · From Vision to Execution
 
-> Once upon a code sprint, two of us set our sights on a 3D solar system that would feel effortless to explore. We had the vision, the drive, and the caffeine — but the build staggered under hosting limits and heavy assets. We needed more gravity in our orbit and two more teammates joined to balance pure creativity with optimization chops.
+Our journey began with a simple goal: build a 3D solar system in Three.js that runs directly in the browser. The founding duo of Team MetaVision spent late nights sketching orbits, tweaking shaders, and dreaming of an experience that felt cinematic on any device. As the vision grew, so did the crew—four teammates united by curiosity, caffeine, and a desire to prove that high-end 3D belongs on the open web.
 
-Key early hurdles:
-- Planetary shaders that sprawled past budget on mid-range laptops
-- Asset streaming hiccups during Vercel deployments
-- Narration and guidance that felt flat without a proper assistant layer
-
----
-
-### Chapter 2 · The Copilot Breakthrough
-
-Hacktoberfest and the MLH Open Source Week changed our velocity. As we contributed upstream and compared notes with other makers, we discovered GitHub Copilot. The AI pair programmer became our guiding star:
-- Refined noisy render loops into lean animation sequences
-- Suggested lazy-loading strategies that unlocked smooth frame rates on “potato” hardware
-- Surfaced deployment fixes that finally calmed Vercel’s timeouts
-
-With Copilot steadied at the console, our biggest blockers collapsed and SolarXplorer finally rendered flawlessly across devices.
-
----
-
-### Chapter 3 · Building the Galaxy
+In the early stages we struggled with optimization, deployment, and hosting. Despite multiple rebuilds, we could not get SolarXplorer to glide smoothly across laptops and phones. Asset payloads spiked, performance tanked, and every Vercel deploy felt like a coin flip.
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="600" />
+  <img src="https://i.postimg.cc/s2gpmpxY/Screenshot-2025-10-19-001248.png" width="720" alt="Early SolarXplorer prototype" />
 </div>
 
-We layered specialized partner tools from the MLH Hackerfest ecosystem to make the experience truly interstellar:
+We kept iterating—profiling frame drops, pruning textures, and revisiting our render pipeline. The prototype captured the atmosphere we wanted, but the dream of a buttery-smooth solar system still felt an arm’s length away.
 
-- 🚀 **Auth0** keeps explorers authenticated so progress, favorites, and achievements persist securely.
-- 🪐 **Google Gemini API** acts as a personal guide; ask about planetary composition or history and receive contextual answers on the fly.
-- ❄ **Snowflake** stores telemetry, user stories, and content updates, syncing insights back to the crew.
-- 🤖 **GitHub Copilot** remains our cosmic co-pilot, translating frustration into momentum.
+<div align="center">
+  <img src="https://i.postimg.cc/2yQbr63B/Screenshot-2025-10-19-001333.png" width="720" alt="Optimization pass during development" />
+</div>
+
+Momentum arrived during our first MLH Open Source Week and Hacktoberfest. Contributing to projects around the globe sharpened our instincts—and introduced us to the missing link in our workflow: **GitHub Copilot**. With Copilot pairing alongside us, we refactored heavy render loops, implemented smarter lazy-loading, and finally shipped builds that felt responsive even on low-spec hardware. Deployments to Vercel stopped feeling like roulette and started feeling routine.
+
+<div align="center">
+  <img src="https://i.postimg.cc/rsNm7PYK/Screenshot-2025-10-19-001842.png" width="600" alt="Hacktoberfest collaboration snapshot" />
+</div>
+
+To amplify the experience, we layered in partner tools from the MLH Hackerfest ecosystem:
+
+- 🚀 **Auth0** delivers reliable, secure authentication so explorers can save journeys and achievements.
+- 🪐 **Google Gemini API** acts as a virtual “Solar System Guide,” answering questions as users glide between planets.
+- ❄️ **Snowflake** keeps our mission data organized and lightning-fast behind the scenes.
+- 🤖 **GitHub Copilot** continues to accelerate development, helping us maintain quality while we experiment.
+
+<div align="center">
+  <img src="https://i.postimg.cc/sf4gjbw2/Screenshot-2025-10-19-001919.png" width="720" alt="SolarXplorer main user interface" />
+</div>
+
+Today SolarXplorer invites anyone to embark on an optimized, immersive journey through space—complete with smooth graphics, realistic planetary motion, and ambient interstellar sound. More than just code, it’s the story of how teamwork, open source learning, and modern developer tools transformed ambition into reality.
 
 Feature highlights:
-- Realistic orbital mechanics balanced for web performance
-- Adaptive soundtrack and spatial audio cues for immersion
-- Progressive enhancement that gracefully degrades on low-power devices
-- Monitoring hooks that alert us to drift in frame times or API latency
+- Real-time orbital choreography designed for the browser
+- Adaptive visual settings that keep frame rates steady on “potato” hardware
+- Context-aware narration powered by Gemini’s on-demand insights
+- Progressive audio and lighting cues that deepen the sense of scale
+
+We are Team MetaVision, and SolarXplorer is proof that curiosity, collaboration, and the right copilots can launch a galaxy.
 
 ---
 
@@ -80,18 +82,18 @@ flowchart LR
 timeline
   title SolarXplorer Flight Log
   section Conception
-    Vision drafted :: 2024-Q1
-    Core duo prototypes :: 2024-Q2
+    2024-Q1 : Vision drafted
+    2024-Q2 : Core duo prototypes
   section Expansion
-    Team MetaVision formed :: 2024-Q3
-    MLH Open Source Week :: 2024-Q3
+    2024-Q3 : Team MetaVision formed
+    2024-Q3 : MLH Open Source Week
   section Breakthrough
-    GitHub Copilot onboarding :: 2024-Q4
-    Performance stabilization :: 2025-Q1
+    2024-Q4 : GitHub Copilot onboarding
+    2025-Q1 : Performance stabilization
   section Deployment
-    Auth0 + Gemini integration :: 2025-Q2
-    Snowflake analytics pipeline :: 2025-Q2
-    Vercel production deploy :: 2025-Q3
+    2025-Q2 : Auth0 + Gemini integration
+    2025-Q2 : Snowflake analytics pipeline
+    2025-Q3 : Vercel production deploy
 ```
 
 ---
