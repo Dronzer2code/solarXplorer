@@ -149,20 +149,20 @@ document.addEventListener('DOMContentLoaded', async () => {
           mainCTA.innerHTML = '> ENTER SOLAR SYSTEM <';
           mainCTA.title = 'Launch the 3D Solar System Explorer';
         }
-        if (finalCTA) {
-          finalCTA.innerHTML = '> ENTER SOLAR SYSTEM <';
-          finalCTA.title = 'Launch the 3D Solar System Explorer';
-        }
       } else {
         // User is not logged in - show "Login to Explore" text
         if (mainCTA) {
           mainCTA.innerHTML = '> LOGIN TO EXPLORE <';
           mainCTA.title = 'Sign in to access the Solar System';
         }
-        if (finalCTA) {
-          finalCTA.innerHTML = '> LOGIN TO EXPLORE <';
-          finalCTA.title = 'Sign in to access the Solar System';
-        }
+      }
+
+      if (finalCTA) {
+        finalCTA.textContent = 'Take An AstroQuiz';
+        finalCTA.title = 'Launch the amAstroQuiz challenge';
+        finalCTA.setAttribute('href', 'https://i.postimg.cc/fyFnrTWp/z.jpg');
+        finalCTA.setAttribute('target', '_blank');
+        finalCTA.setAttribute('rel', 'noopener');
       }
     }
 
@@ -183,8 +183,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       mainCTA.onclick = () => window.location.assign("https://3d-solar-system-three-js.vercel.app/");
     }
     if (finalCTA) {
-      finalCTA.innerHTML = '> ENTER SOLAR SYSTEM <';
-      finalCTA.onclick = () => window.location.assign("https://3d-solar-system-three-js.vercel.app/");
+      finalCTA.textContent = 'Take An AstroQuiz';
+      finalCTA.setAttribute('href', 'https://i.postimg.cc/fyFnrTWp/z.jpg');
+      finalCTA.setAttribute('target', '_blank');
+      finalCTA.setAttribute('rel', 'noopener');
     }
   }
 });
