@@ -3,6 +3,26 @@
   <img src="https://i.postimg.cc/fyFnrTWp/z.jpg" width="920" />
 </div>
 
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2000&pause=400&color=00FF9C&center=true&vCenter=true&width=1000&height=100&lines=%3E_%2B+BOOTING+SOLARXPLORER...;%3E_%2B+TEAM+METAVISION+ONLINE;%3E_%2B+LIVE+3D+SOLAR+SYSTEM+%7C+THREE.JS;%3E_%2B+COPILOT+ENGAGED+FOR+OPTIMIZATION;%3E_%2B+AUTH0+%2F+GEMINI+%2F+SNOWFLAKE+LINKED;%3E_%2B+EDUCATION+MODE%3A+SPACE+CLASSROOM" alt="SolarXplorer Typing Animation" />
+</div>
+
+```text
+╔══════════════════════════════════════╗
+║  Team ID: MetaVision                ║
+║  LOCATION: West Bengal,India      ║
+║  INSTITUTION: GNIT                   ║
+║  CLEARANCE: Level 30                  ║
+║  DIVISION: Enginnering          ║
+║  STATUS: Active Development          ║
+╚══════════════════════════════════════╝
+   
+🎯 MISSION OBJECTIVE:
+   └─ Create a Hand on Learning Platform
+   └─ Giveing Lifetime Experience for users
+   └─ Make Open Source hacking Memorable
+```
+
 ## 🌌 SolarXplorer — From Starlight to Spotlight
 
 Team MetaVision set out to build a browser-native 3D solar system with Three.js. We began as two dreamers staring at a blank constellation of ideas and ended as a four-person crew launching a production-ready cosmic playground. This document traces that arc and captures how partner tools, open-source energy, and GitHub Copilot helped us land the mission.
@@ -59,7 +79,6 @@ Feature highlights:
 - Progressive audio and lighting cues that deepen the sense of scale
 - Interactive educational journeys that make space science and planetary lore feel tangible
 
-### Main Purpose and Goal
 SolarXplorer is built as an educational constellation as much as an entertainment showcase. Every orbit, tooltip, and AI-guided prompt is crafted to help explorers learn about the physics of our solar system, the myths that shaped planetary names, and the frontier missions pushing humanity deeper into space. From classroom demos to self-guided stargazing, the experience sparks curiosity well beyond the screen.
 
 ### Constellation Moments (Hover-Worthy Highlights)
