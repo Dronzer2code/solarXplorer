@@ -1,6 +1,6 @@
 <!-- SolarXplorer Hero -->
 <div align="center">
-  <img src="https://i.postimg.cc/fyFnrTWp/z.jpg" width="920" />
+  <img src="https://i.postimg.cc/fyFnrTWp/z.jpg" width="520" />
 </div>
 
 ## 🌌 SolarXplorer — From Starlight to Spotlight
@@ -57,6 +57,23 @@ Feature highlights:
 - Adaptive visual settings that keep frame rates steady on “potato” hardware
 - Context-aware narration powered by Gemini’s on-demand insights
 - Progressive audio and lighting cues that deepen the sense of scale
+- Interactive educational journeys that make space science and planetary lore feel tangible
+
+### Main Purpose and Goal
+SolarXplorer is built as an educational constellation as much as an entertainment showcase. Every orbit, tooltip, and AI-guided prompt is crafted to help explorers learn about the physics of our solar system, the myths that shaped planetary names, and the frontier missions pushing humanity deeper into space. From classroom demos to self-guided stargazing, the experience sparks curiosity well beyond the screen.
+
+### Constellation Moments (Hover-Worthy Highlights)
+
+<div align="center">
+  <img src="https://media.tenor.com/QzFQykG29GcAAAAC/space-galaxy.gif" width="460" alt="Nebula ripple animation" />
+</div>
+
+- **Aurora Trails:** Dynamic particle wakes shimmer behind orbiting bodies, pulsing in sync with the soundtrack so every flyby feels alive.
+- **Nebula Mode:** A cinematic camera sweep that bathes planets in volumetric light, complete with lens flares tuned for responsive performance.
+- **Stellar Portals:** Contextual Gemini prompts open side-by-side overlays, letting explorers query lore without ever leaving the cosmos.
+- **Meteor Showers on Demand:** Easter eggs trigger procedurally generated meteor arcs, ideal for live demos and late-night wow-moments.
+
+> “We wanted moments that make viewers reach for the trackpad just to see what happens next. These flourishes are why SolarXplorer feels enchanted rather than engineered.” — Team MetaVision
 
 We are Team MetaVision, and SolarXplorer is proof that curiosity, collaboration, and the right copilots can launch a galaxy.
 
