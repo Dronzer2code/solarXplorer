@@ -76,6 +76,14 @@ Today, **SolarXplorer** invites anyone to embark on an optimized, immersive jour
 
 ### ✨ Feature Highlights
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
+  <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="100">
+</div>
+
 - **Real-time Orbital Mechanics** — Browser-optimized celestial choreography with accurate physics simulation
 - **Adaptive Performance** — Dynamic visual settings that maintain smooth frame rates across all device capabilities  
 - **AI-Powered Narration** — Context-aware storytelling powered by Gemini's intelligent, on-demand insights
@@ -87,6 +95,7 @@ Today, **SolarXplorer** invites anyone to embark on an optimized, immersive jour
 **SolarXplorer** is built as an educational constellation as much as an entertainment showcase. Every orbit, tooltip, and AI-guided prompt is crafted to help explorers learn about the physics of our solar system, the myths that shaped planetary names, and the frontier missions pushing humanity deeper into space. From classroom demonstrations to self-guided stargazing sessions, the experience sparks curiosity that extends far beyond the digital realm.
 
 ### 🌟 Constellation Moments (Hover-Worthy Highlights)
+
 
 <div align="center">
   <img src="https://media.tenor.com/QzFQykG29GcAAAAC/space-galaxy.gif" width="460" alt="Nebula ripple animation" />
@@ -185,3 +194,7 @@ Together, we bridge the realms of art, engineering, and storytelling. During int
 </div>
 
 **SolarXplorer** is our declaration that high-end, accessible 3D experiences belong on the open web. From two curious builders to the full MetaVision crew, from starlight to spotlight — we launched a galaxy born from code, curiosity, and the partners who guided us. 🌠
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF6B6B,100:4ECDC4&height=120&text=SolarXplorer&fontSize=40&fontColor=ffffff&animation=twinkling&section=footer" />
+</div>
