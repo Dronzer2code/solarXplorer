@@ -70,18 +70,52 @@ The breakthrough came during our participation in MLH Open Source Week and Hackt
   <img src="https://i.postimg.cc/rsNm7PYK/Screenshot-2025-10-19-001842.png" width="600" alt="Hacktoberfest collaboration snapshot" />
 </div>
 
-To enhance the user experience, we integrated powerful partner tools from the MLH ecosystem:
+Today, **SolarXplorer** invites anyone to embark on an optimized, immersive journey through our solar system—featuring fluid graphics, scientifically accurate planetary motion, and ambient interstellar soundscapes. More than just code, it’s the story of how teamwork, open source learning, and modern developer tools transformed ambition into reality.
 
-- 🚀 **Auth0** — Provides enterprise-grade authentication, enabling explorers to save their cosmic journeys and unlock achievements
-- 🪐 **Google Gemini API** — Functions as an intelligent "Solar System Guide," delivering contextual answers as users navigate between celestial bodies  
-- ❄️ **Snowflake** — Manages our mission analytics with lightning-fast data processing behind the scenes
-- 🤖 **GitHub Copilot** — Continuously accelerates our development velocity while maintaining code quality during rapid iteration
+### Partner Integration
+
+We integrated powerful tools from the MLH ecosystem to elevate the experience:
+
+| Partner | Role | Impact |
+|---------|------|--------|
+| 🔐 **Auth0** | Enterprise authentication | Users save progress, unlock achievements, sync across devices |
+| 🤖 **Google Gemini API** | Intelligent guide | Contextual answers as explorers navigate celestial bodies |
+| ❄️ **Snowflake** | Analytics engine | Lightning-fast mission data processing and insights |
+| 💻 **GitHub Copilot** | AI pair programmer | Accelerated development velocity while maintaining code quality |
+
+---
+
+## 🛠️ Technology Stack
 
 <div align="center">
-  <img src="https://i.postimg.cc/sf4gjbw2/Screenshot-2025-10-19-001919.png" width="720" alt="SolarXplorer main user interface" />
+
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![WebGL](https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Auth0](https://img.shields.io/badge/Auth0-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
+
 </div>
 
-Today, **SolarXplorer** invites anyone to embark on an optimized, immersive journey through our solar system—featuring fluid graphics, scientifically accurate planetary motion, and ambient interstellar soundscapes. More than just code, it’s the story of how teamwork, open source learning, and modern developer tools transformed ambition into reality.
+### Core Technologies
+- **Three.js** — 3D rendering and WebGL abstraction
+- **Custom Physics Engine** — Accurate orbital mechanics simulation
+- **Web Audio API** — Spatial audio and ambient soundscapes
+
+### Infrastructure & Services
+- **Vercel Edge Network** — Global CDN and serverless deployment
+- **Auth0** — User authentication and session management
+- **Google Gemini API** — AI-powered contextual narration
+- **Snowflake** — Analytics and data warehousing
+
+### Development Tools
+- **GitHub Copilot** — AI-assisted coding and refactoring
+- **Vite** — Lightning-fast build tooling
+- **ESLint & Prettier** — Code quality and consistency
+
+---
 
 ### ✨ Feature Highlights
 
@@ -121,7 +155,7 @@ We are Team MetaVision, and SolarXplorer is proof that curiosity, collaboration,
 
 ---
 
-### Architecture at a Glance
+## 🏗️ Architecture at a Glance
 
 ```mermaid
 flowchart LR
