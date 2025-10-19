@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (finalCTA) {
         finalCTA.textContent = 'Take An AstroQuiz';
         finalCTA.title = 'Launch the amAstroQuiz challenge';
-        finalCTA.setAttribute('href', 'https://i.postimg.cc/fyFnrTWp/z.jpg');
+        finalCTA.setAttribute('href', 'https://cosmicquizzer.vercel.app/');
         finalCTA.setAttribute('target', '_blank');
         finalCTA.setAttribute('rel', 'noopener');
       }
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     if (finalCTA) {
       finalCTA.textContent = 'Take An AstroQuiz';
-      finalCTA.setAttribute('href', 'https://i.postimg.cc/fyFnrTWp/z.jpg');
+      finalCTA.setAttribute('href', 'https://cosmicquizzer.vercel.app/');
       finalCTA.setAttribute('target', '_blank');
       finalCTA.setAttribute('rel', 'noopener');
     }
