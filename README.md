@@ -1,6 +1,6 @@
 <!-- SolarXplorer Hero -->
 <div align="center">
-  <img src="https://i.postimg.cc/fyFnrTWp/z.jpg" width="520" />
+  <img src="https://i.postimg.cc/fyFnrTWp/z.jpg" width="920" />
 </div>
 
 ## 🌌 SolarXplorer — From Starlight to Spotlight
